@@ -272,13 +272,13 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(arr) {
-  const arr1 = arr.map((v, i, newArr) => {
-    newArr.fill(v, i, newArr.length);
-    return newArr;
-  });
-  return arr1.reduce((acc, val) => acc.concat(val), []);
-  // throw new Error('Not implemented');
+function propagateItemsByPositionIndex(/* arr */) {
+  // const arr1 = arr.map((v, i, newArr) => {
+  //   newArr.fill(v, i, newArr.length);
+  //   return newArr;
+  // });
+  // return arr1.reduce((acc, val) => acc.concat(val), []);
+  throw new Error('Not implemented');
 }
 
 /**
@@ -507,8 +507,8 @@ function getIntervalArray(start, end) {
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  return arr.filter((val, i, a) => a.indexOf(val) === i);
 }
 
 /**

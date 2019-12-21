@@ -201,18 +201,7 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(/* width, height */) {
-  // const arr = [];
-  // arr[0][0].push('┌');
-  // arr[0][height].push('└');
-  // arr[width][0].push('┐');
-  // arr[width][height].push('┘');
-  // for (let i = 1; i < height; i += 1) {
-  //   for (let j = 1; j < width; j += 1) {
-  //     arr[j][i].push('─');
-  //   }
-  // }
-  // console.log(arr);
-  // return arr.toString();
+  throw new Error('Not implemented');
 }
 
 /**
@@ -232,7 +221,6 @@ function getRectangleString(/* width, height */) {
  *
  */
 function encodeToRot13(str) {
-  // console.log(str.replace(/[a-zA-Z]/gi));
   return str.replace(/[a-zA-Z]/gi, s => {
     return String.fromCharCode(
       s.charCodeAt(0) + (s.toLowerCase() < 'n' ? 13 : -13)
@@ -337,7 +325,6 @@ function getCardId(value) {
     'K♠'
   ];
   return arr.indexOf(value);
-  // throw new Error('Not implemented');
 }
 
 module.exports = {
