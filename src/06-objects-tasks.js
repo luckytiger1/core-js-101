@@ -22,9 +22,7 @@
 function Rectangle(width, height) {
   this.width = width;
   this.height = height;
-  this.getArea = () => {
-    return this.width * this.height;
-  };
+  this.getArea = () => this.width * this.height;
 }
 
 /**
@@ -138,12 +136,12 @@ const cssSelectorBuilder = {
 
   combine(/* selector1, combinator, selector2 */) {
     throw new Error('Not implemented');
-  }
+  },
 };
 
 module.exports = {
   Rectangle,
   getJSON,
   fromJSON,
-  cssSelectorBuilder
+  cssSelectorBuilder,
 };
