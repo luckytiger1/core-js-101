@@ -1,3 +1,5 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable arrow-parens */
 /* ********************************************************************************************
  *                                                                                            *
  * Plese read the following tutorial before implementing tasks:                               *
@@ -36,7 +38,7 @@ function findElement(arr, value) {
  */
 function generateOdds(len) {
   const arr = Array.from({ length: len * 2 }, (v, i) => i);
-  return arr.filter((x) => x % 2 !== 0);
+  return arr.filter(x => x % 2 !== 0);
 }
 
 /**
@@ -71,7 +73,7 @@ function doubleArray(arr) {
  *    [] => []
  */
 function getArrayOfPositives(arr) {
-  return arr.filter((x) => x > 0);
+  return arr.filter(x => x > 0);
 }
 
 /**
@@ -86,7 +88,7 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
 function getArrayOfStrings(arr) {
-  return arr.filter((x) => typeof x === 'string');
+  return arr.filter(x => typeof x === 'string');
 }
 
 /**
@@ -103,7 +105,7 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-  return arr.filter((x) => x);
+  return arr.filter(x => x);
 }
 
 /**
@@ -118,7 +120,7 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
-  return arr.map((x) => x.toUpperCase());
+  return arr.map(x => x.toUpperCase());
 }
 
 /**
@@ -132,7 +134,7 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
-  return arr.map((x) => x.length);
+  return arr.map(x => x.length);
 }
 
 /**
@@ -199,9 +201,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
-  return arr
-    .map((d) => d.join())
-    .join('\n');
+  return arr.map(d => d.join()).join('\n');
 }
 
 /**
@@ -216,7 +216,7 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-  return arr.map((x) => x ** 2);
+  return arr.map(x => x ** 2);
 }
 
 /**
@@ -235,7 +235,7 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
   let sum = 0;
-  return arr.map((v) => {
+  return arr.map(v => {
     sum += v;
     return sum;
   });
@@ -311,7 +311,7 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  const newArr = arr.filter((x) => x > 0 && typeof x === 'number');
+  const newArr = arr.filter(x => x > 0 && typeof x === 'number');
   return newArr.length;
 }
 
@@ -339,7 +339,7 @@ function sortDigitNamesByNumericOrder(arr) {
     six: 6,
     seven: 7,
     eight: 8,
-    nine: 9,
+    nine: 9
   };
   return arr.sort((a, b) => digits[a] - digits[b]);
   // throw new Error('Not implemented');
@@ -445,7 +445,7 @@ function toStringList(arr) {
  */
 function sortCitiesArray(arr) {
   return arr.sort(
-    (a, b) => a.country.localeCompare(b.country) || a.city.localeCompare(b.city),
+    (a, b) => a.country.localeCompare(b.country) || a.city.localeCompare(b.city)
   );
 }
 
@@ -552,8 +552,9 @@ function group(/* array, keySelector, valueSelector */) {
  *   [[1, 2], [3, 4], [5, 6]], (x) => x     =>   [ 1, 2, 3, 4, 5, 6 ]
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(/* arr, childrenSelector */) {
-  throw new Error('Not implemented');
+function selectMany(arr, childrenSelector) {
+  return arr.map(childrenSelector).reduce((s, e) => s.concat(e), []);
+  // throw new Error('Not implemented');
 }
 
 /**

@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 /* *********************************************************************************************
  *                                                                                             *
  * Plese read the following tutorial before implementing tasks:                                *
@@ -23,7 +24,6 @@
  *
  */
 function getComposition(f, g) {
-  // eslint-disable-next-line arrow-parens
   return x => f(g(x));
 }
 
@@ -43,8 +43,8 @@ function getComposition(f, g) {
  *   power05(16) => 4
  *
  */
-function getPowerFunction(/* exponent */) {
-  throw new Error('Not implemented');
+function getPowerFunction(exponent) {
+  return x => x ** exponent;
 }
 
 /**
@@ -163,6 +163,7 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(/* startFrom */) {
+  // return () => startFrom ;
   throw new Error('Not implemented');
 }
 
