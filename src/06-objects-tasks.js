@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* ************************************************************************************************
  *                                                                                                *
  * Plese read the following tutorial before implementing tasks:                                   *
@@ -51,8 +52,9 @@ function getJSON(obj) {
  *    const r = fromJSON(Circle.prototype, '{"radius":10}');
  *
  */
-function fromJSON(/* proto, json */) {
-  throw new Error('Not implemented');
+function fromJSON(proto, json) {
+  return Object.setPrototypeOf(JSON.parse(json), proto);
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -136,12 +138,12 @@ const cssSelectorBuilder = {
 
   combine(/* selector1, combinator, selector2 */) {
     throw new Error('Not implemented');
-  },
+  }
 };
 
 module.exports = {
   Rectangle,
   getJSON,
   fromJSON,
-  cssSelectorBuilder,
+  cssSelectorBuilder
 };
