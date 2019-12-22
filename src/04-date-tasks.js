@@ -35,8 +35,6 @@ function parseDataFromRfc2822(value) {
  */
 function parseDataFromIso8601(value) {
   return new Date(value);
-
-  // throw new Error('Not implemented');
 }
 
 /**
@@ -53,8 +51,11 @@ function parseDataFromIso8601(value) {
  *    Date(2012,1,1)    => true
  *    Date(2015,1,1)    => false
  */
-function isLeapYear(/* date */) {
-  throw new Error('Not implemented');
+function isLeapYear(date) {
+  return date.getFullYear() % 100 === 0
+    ? date.getFullYear() % 400 === 0
+    : date.getFullYear() % 4 === 0;
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -99,5 +100,6 @@ module.exports = {
   parseDataFromIso8601,
   isLeapYear,
   timeSpanToString,
-  angleBetweenClockHands,
+  // eslint-disable-next-line comma-dangle
+  angleBetweenClockHands
 };
