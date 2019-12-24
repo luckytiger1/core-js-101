@@ -1,3 +1,5 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable comma-dangle */
 /* *******************************************************************************************
  *                                                                                           *
  * Plese read the following tutorial before implementing tasks:                              *
@@ -91,8 +93,11 @@ function timeSpanToString(/* startDate, endDate */) {
  *    Date.UTC(2016,3,5,18, 0) => Math.PI
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
-function angleBetweenClockHands(/* date */) {
-  throw new Error('Not implemented');
+function angleBetweenClockHands(date) {
+  const angle =
+    0.5 * (60 * (date.getUTCHours() % 12) - 11 * date.getUTCMinutes());
+
+  return (Math.min(Math.abs(angle), Math.abs(360 - angle)) * Math.PI) / 180;
 }
 
 module.exports = {
